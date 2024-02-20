@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="rik.css">
+    <title>Rik And Morty</title>
+</head>
+<body>
+    <div class="fundo">
+    <!-- IMAGENS PELA CAT AS A SERVICE -->
+<div class="gallery">
+    <div class="image" onclick="showRikAndMorty('photo1')">
+        <img src="https://rickandmortyapi.com/api/character/avatar/61.jpeg" alt="personagem 1">
+    </div>
+    <div class="image" onclick="showRikAndMorty('photo2')">
+        <img src="https://rickandmortyapi.com/api/character/avatar/219.jpeg" alt="personagem 2">
+    </div>
+    <div class="image" onclick="showRikAndMorty('photo3')">
+        <img src="https://rickandmortyapi.com/api/character/avatar/437.jpeg" alt= "personagem 3">
+    </div>
+</div>
+
+<div class="message" id="RikAndMortyMessage">
+    <!-- A mensagem do fato de gato será exibida aqui -->
+</div>
+<script src="rik.js"></script>
+
+<script>
+
+    
+    function showRikAndMorty(photo) {
+        const messageContainer = document.getElementById('RikAndMortyMessage');
+        let message = '';
+
+        switch (photo) {
+            case 'photo1':
+                message = "Gerente de Campanha Morty ele esta morto, sua ultima localização é A Cidadela de Ricks";
+                break;
+                
+            case 'photo2':
+                message = "Esta é Verão MecanicoRobÔ seu paradeiro de vida é desconhecido, ultima localização foi A Terra.";
+                break;
+            case 'photo3':
+                message = "Michael continua vivo, sua ultima localização foi A Terra.";
+                break;
+            default:
+                message = "Oops! Não há informações disponíveis para o personagem.";
+        }
+
+        messageContainer.textContent = message;
+    }
+
+</script>
+</div>
+</body>
+</html>
